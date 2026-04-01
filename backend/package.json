@@ -17,16 +17,16 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "iconv-lite": "^0.7.2",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.3",
     "mongoose": "^6.0.14",
     "multer": "^1.4.5-lts.1",
     "request": "^2.88.2"
   },
   "devDependencies": {
     "esm": "^3.2.25",
-    "mocha": "^11.0.1",
+    "mocha": "^7.2.0",
     "nodemon": "^2.0.15",
-    "sinon": "^19.0.2"
+    "sinon": "^21.0.3"
   },
   "author": "Task Manager Team",
   "license": "ISC"
