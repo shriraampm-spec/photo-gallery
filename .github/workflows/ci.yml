@@ -49,8 +49,6 @@ jobs:
           npm install
           npm test -- --watchAll=false --passWithNoTests
           npm run build
-<<<<<<< Updated upstream
-=======
 
   deploy:
     runs-on: self-hosted
@@ -82,4 +80,3 @@ jobs:
           pm2 restart photo-gallery || pm2 start ~/photo-gallery/backend/server.js --name photo-gallery
           pm2 save
 
->>>>>>> Stashed changes
