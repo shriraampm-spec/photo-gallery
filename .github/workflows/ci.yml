@@ -68,6 +68,7 @@ jobs:
       - name: Build frontend
         run: |
           cd ~/photo-gallery/frontend
+          ls
           npm run build
 
       - name: Restart backend with PM2
