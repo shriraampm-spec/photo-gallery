@@ -137,11 +137,7 @@ const Gallery = () => {
             <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300 xl:text-lg">
               Save your images with a title, category, description, and capture date. Every gallery item belongs to your account only.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <span className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-slate-200">Owner-only access</span>
-              <span className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-slate-200">Image URL or upload</span>
-              <span className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-slate-200">MongoDB-backed records</span>
-            </div>
+           
           </div>
           <div className="rounded-[1.9rem] border border-white/10 bg-white/10 p-6 backdrop-blur">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">Signed in as</p>
