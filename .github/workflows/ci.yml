@@ -72,7 +72,7 @@ jobs:
         run: |
           export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
           cd ~/photo-gallery/frontend
-          npm run build
+          npm run dev
 
       - name: Restart backend with PM2
         run: |
