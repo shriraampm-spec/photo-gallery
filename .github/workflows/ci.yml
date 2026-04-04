@@ -33,7 +33,6 @@ jobs:
         run: |
           cd backend
           npm install
-          # Skip tests if they require a database and secrets are not set
           if [ -n "$MONGO_URI" ]; then
             npm test
           else
@@ -72,11 +71,11 @@ jobs:
         run: |
           export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
           cd ~/photo-gallery/frontend
-          npm run build
+          GENERATE_SOURCEMAP=false npm run build
 
       - name: Restart backend with PM2
         run: |
           export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
-          pm2 restart photo-gallery || pm2 start ~/photo-gallery/backend/server.js --name photo-gallery
+          pm2 restart photo-gallery || pm2 start server.js --name photo-gallery --cwd ~/photo-gallery/backend
           pm2 save
 
