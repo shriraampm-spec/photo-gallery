@@ -111,3 +111,43 @@ If both `imageUrl` and `image` are supplied, the uploaded file is used.
 - Each user can only access their own photos.
 - The provided MongoDB Atlas credential should be rotated before public sharing or final submission.
 
+## Demo Credentials
+
+Use the following account to explore the app without registering:
+
+```
+Email:    demo@photogallery.com
+Password: Demo@1234
+```
+
+> These credentials are for assessment review only.
+
+## Public URL
+
+The application is deployed and accessible at:
+
+```
+http://<EC2-PUBLIC-IP>:3000
+```
+
+> Replace with the actual EC2 public IP once deployed.
+
+## Running Tests
+
+### Frontend tests
+
+```bash
+npm test --prefix frontend -- --watchAll=false
+```
+
+Expected output:
+
+```
+PASS src/App.test.js
+PASS src/components/PhotoCard.test.jsx
+PASS src/components/PhotoForm.test.jsx
+PASS src/components/ProtectedRoute.test.jsx
+Test Suites: 4 passed, 4 total
+Tests:       6 passed, 6 total
+```
+
