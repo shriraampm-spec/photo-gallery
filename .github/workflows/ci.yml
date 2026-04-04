@@ -33,7 +33,6 @@ jobs:
         run: |
           cd backend
           npm install
-          # Skip tests if they require a database and secrets are not set
           if [ -n "$MONGO_URI" ]; then
             npm test
           else
@@ -49,3 +48,37 @@ jobs:
           npm install
           npm test -- --watchAll=false --passWithNoTests
           npm run build
+<<<<<<< Updated upstream
+=======
+
+  deploy:
+    runs-on: self-hosted
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - name: Pull latest code
+        run: |
+          export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
+          cd ~/photo-gallery
+          git pull origin main
+
+      - name: Install dependencies
+        run: |
+          export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
+          cd ~/photo-gallery
+          npm run install-all
+
+      - name: Build frontend
+        run: |
+          export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
+          cd ~/photo-gallery/frontend
+          npm run build
+
+      - name: Restart backend with PM2
+        run: |
+          export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
+          pm2 restart photo-gallery || pm2 start ~/photo-gallery/backend/server.js --name photo-gallery
+          pm2 save
+
+>>>>>>> Stashed changes
