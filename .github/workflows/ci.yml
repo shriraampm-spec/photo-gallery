@@ -79,3 +79,8 @@ jobs:
           pm2 restart photo-gallery || pm2 start server.js --name photo-gallery --cwd ~/photo-gallery/backend
           pm2 save
 
+      - name: Start frontend with PM2
+        run: |
+          export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
+          pm2 restart photo-frontend || pm2 serve ~/photo-gallery/frontend/build 3000 --name photo-frontend --spa
+          pm2 save
