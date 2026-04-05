@@ -127,7 +127,7 @@ Password: Demo@1234
 The application is deployed and accessible at:
 
 ```
-http://<EC2-PUBLIC-IP>:3000
+http://54.252.254.17:3000
 ```
 
 > Replace with the actual EC2 public IP once deployed.
